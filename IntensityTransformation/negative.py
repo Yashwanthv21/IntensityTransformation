@@ -14,7 +14,7 @@ def negativeImage(im):
 			red = 255-im[row][col][0]
 			green = 255-im[row][col][1]
 			blue = 255-im[row][col][2]
-			im[row][col]=[red,green,blue]
+			im[row][col]=[blue,green,red]
 
 	return Arraytob64(im)
 

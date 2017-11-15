@@ -31,7 +31,7 @@ def displayImage(base64Image):
 
 def operations(request):
     from negative import negativeImage
-    if request.POST.get("operation","") == 1: #Negative Image hardcoded in Forms.py
+    if request.POST.get("operation","") == '1': #Negative Image hardcoded in Forms.py
         img = request.POST.get("imageData","")
         res = negativeImage(img)
 
