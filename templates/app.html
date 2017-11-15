@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,81 +16,112 @@
     <!-- Custom styles for this template -->
     <link href="{% static 'css/portfolio-item.css' %}" rel="stylesheet">
 
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
         <a class="navbar-brand" href="#">Start Bootstrap</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
-          </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
         </div>
-      </div>
-    </nav>
+    </div>
+</nav>
 
-    <!-- Page Content -->
-    <div class="container-fluid">
+<!-- Page Content -->
+<div class="container-fluid">
 
-      <!-- Portfolio Item Heading -->
-      <h1 class="my-4">Page Heading
+    <!-- Portfolio Item Heading -->
+    <h1 class="my-4">Page Heading
         <small>Secondary Text</small>
-      </h1>
+    </h1>
 
-      <!-- Portfolio Item Row -->
+    <!-- Portfolio Item Row -->
 
-{#        src="http://placehold.it/750x500"#}
-      <div class="row">
+    {#        src="http://placehold.it/750x500"#}
+    <div class="row">
         <div class="col-md-6 col-xs-6 col-sm-6">
-          <img class="img-fluid col-md-12" src="http://placehold.it/750x500" alt="">
-            <button></button>
+            {% if image is not none %}
+            <img class="img-fluid col-md-12" src="{{ image }}" alt="">
+                {% else %}
+                <img class="img-fluid col-md-12" src="http://placehold.it/750x500" alt="">
+            {% endif %}
+{#            <div class="form-group">#}
+{#                <div class="input-group input-file" name="Fichier1">#}
+{#			<span class="input-group-btn">#}
+{#        		<button class="btn btn-primary btn-choose" type="button">Choose</button>#}
+{#            </span>#}
+{#                    <input type="text" class="form-control" placeholder='Choose a file...'/>#}
+{#                    <span class="input-group-btn">#}
+{#       			 <button class="btn btn-warning btn-reset" type="button">Reset</button>#}
+{#    		</span>#}
+{#                </div>#}
+{#            </div>#}
+
+              <!-- FORM TO UPLOAD THE IMAGES -->
+    <form method="post"  action="{% url 'uploadImage' %}" enctype="multipart/form-data" id="imageUpload">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Upload">
+    </form>
         </div>
-                  <div class="col-md-6 col-xs-6 col-sm-6">
-          <img class="img-fluid col-md-12" src="http://placehold.it/750x500" alt="">
+        <div class="col-md-6 col-xs-6 col-sm-6">
+                      {% if result is not none %}
+            <img class="img-fluid col-md-12" src="{{ result }}" alt="">
+                {% else %}
+                <img class="img-fluid col-md-12" src="http://placehold.it/750x500" alt="">
+            {% endif %}
         </div>
-      </div>
-      <!-- Related Projects Row -->
-      <h3 class="my-4">Related Projects</h3>
+    </div>
+    <!-- Related Projects Row -->
+    <h3 class="my-4">Operations </h3>
 
-      <div class="row">
+    <div class="row">
+    <form method="post"  action="{% url 'operations' %}" id="operations">
+        {% csrf_token %}
+        {{ ops }}
+        <input type="hidden" name="imageData" value="{{ imageData }}">
+        <input type="submit" value="Run">
+    </form>
+    </div>
+    <!-- /.row -->
 
-      </div>
-      <!-- /.row -->
+</div>
+<!-- /.container -->
 
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Starks 2017</p>
     </div>
     <!-- /.container -->
+</footer>
 
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
-      </div>
-      <!-- /.container -->
-    </footer>
+<!-- Bootstrap core JavaScript -->
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
-    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-
-  </body>
+</body>
 
 </html>

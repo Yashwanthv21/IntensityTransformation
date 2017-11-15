@@ -21,4 +21,6 @@ urlpatterns = [
     # url(r'^admin/', admin.site.urls),
     url(r'^$', views.home),
     url(r'^app/$',views.app),
+    url(r'^uploadImage/$',views.upload_file,name="uploadImage"),
+    url(r'^operation/$',views.operations, name="operations"),
 ]
