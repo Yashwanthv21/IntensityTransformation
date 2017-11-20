@@ -19,8 +19,8 @@ def histmatch(imsrc, imtint):
         imhist,bins = np.histogram(imsrc[:,:,d].flatten(),nbr_bins,normed=True)
         tinthist,bins = np.histogram(imtint[:,:,d].flatten(),nbr_bins,normed=True)
 
-        cdfsrc = imhist.cumsum() #cumulative distribution function
-        cdfsrc = (255 * cdfsrc / cdfsrc[-1]).astype(np.uint8) #normalize
+        cdfsrc = imhist.cumsum()
+        cdfsrc = (255 * cdfsrc / cdfsrc[-1]).astype(np.uint8)
 
         cdftint = tinthist.cumsum() #cumulative distribution function
         cdftint = (255 * cdftint / cdftint[-1]).astype(np.uint8) #normalize
