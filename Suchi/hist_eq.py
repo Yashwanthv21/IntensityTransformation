@@ -5,7 +5,8 @@ import cv2
 import base64
 
 def Hist_eq(im):
-	img = cv2.imread(im)
+	im= b64toArray(im)
+	img = cv2.imread(im,0)
 
 	M,N=img.shape
 	hist=[0 for i in range(256)]
