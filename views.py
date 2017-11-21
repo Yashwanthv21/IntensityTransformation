@@ -46,8 +46,15 @@ def operations(request):
         res = hist_match.histmatch(img, img1)
 
     from hist_match import histmatch
-    if request.POST.get("operation", "") == '2':  # Negative Image hardcoded in Forms.py
+    if request.POST.get("operation", "") == '3':  
         img = request.POST.get("imageData", "")
         res = histmatch(img)
+
+    from hist_eq import histogram_equalization
+    if request.POST.get("operation","") == '4':
+        img = request.POST.get("imageData", "")
+        res = histogram_equalization("imageData")
+
+
 
     return render(request, 'app.html', {'form': UploadImageForm, 'image': displayImage(img), 'ops': OperationsForm, 'imageData':img, 'result': displayImage(res)})

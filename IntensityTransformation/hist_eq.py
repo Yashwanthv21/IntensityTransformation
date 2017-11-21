@@ -4,7 +4,7 @@ import numpy as np
 import cv2
 import base64
 
-def Hist_eq(im):
+def histogram_equalization(im):
 	im= b64toArray(im)
 	img = cv2.imread(im,0)
 

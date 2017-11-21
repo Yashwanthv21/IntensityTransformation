@@ -5,7 +5,7 @@ import base64
 from PIL import Image
 import io
 
-def histatch(imsrc, imtint):
+def histmatch(imsrc, imtint):
     imsrc = b64toArray(imsrc)
     imtint=b64toArray(imtint)
     values_int= 255
