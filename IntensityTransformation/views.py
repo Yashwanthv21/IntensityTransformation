@@ -38,7 +38,8 @@ def operations(request):
     from hist_eq import histogram_equalization
     if request.POST.get("operation","") == '4':
         img = request.POST.get("imageData", "")
-        res = histogram_equalization("imageData")
+        res = histogram_equalization(img)
+        print(res)
 
 
     return render(request, 'app.html', {'form': UploadImageForm, 'image': displayImage(img), 'ops': OperationsForm, 'imageData':img, 'result': displayImage(res)})
