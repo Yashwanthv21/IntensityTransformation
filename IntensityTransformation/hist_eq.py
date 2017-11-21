@@ -11,8 +11,8 @@ def histogram_equalization(im):
 	M,N=img.shape
 	hist=[0 for i in range(256)]
 	for i in range(M):
-    	for j in range(N):
-        	hist[img[i,j]]=hist[img[i,j]]+1
+        for j in range(N):
+            hist[img[i,j]]=hist[img[i,j]]+1
     cdf = [sum(hist[:i+1]) for i in range(len(hist))]
     cdf1=[0 for i in range(256)]
     m1 = min(i for i in cdf if i > 0)
