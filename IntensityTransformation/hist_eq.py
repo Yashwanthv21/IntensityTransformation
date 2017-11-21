@@ -11,27 +11,27 @@ def histogram_equalization(im):
 	M,N=img.shape
 	hist=[0 for i in range(256)]
 	for i in range(M):
-    	for j in range(N):
-        	hist[img[i,j]]=hist[img[i,j]]+1
-    cdf = [sum(hist[:i+1]) for i in range(len(hist))]
-    cdf1=[0 for i in range(256)]
-    m1 = min(i for i in cdf if i > 0)
-    m2=np.max(cdf)
-    c=m2-m1
-    for i in range(256):
-    	if(cdf[i]>0):
-        	cdf1[i]=(cdf[i]-m1)*255/(c)
-    	else:
-        	cdf1[i]=cdf[i]
-    new_img=np.zeros((int(M),int(N)),np.uint8)
+		for j in range(N):
+			hist[img[i,j]]=hist[img[i,j]]+1
+	cdf = [sum(hist[:i+1]) for i in range(len(hist))]
+	cdf1=[0 for i in range(256)]
+	m1 = min(i for i in cdf if i > 0)
+	m2=np.max(cdf)
+	c=m2-m1
+	for i in range(256):
+		if(cdf[i]>0):
+			cdf1[i]=(cdf[i]-m1)*255/(c)
+	else:
+		cdf1[i]=cdf[i]
+	new_img=np.zeros((int(M),int(N)),np.uint8)
 	for i in range(M):
-    	for j in range(N):
-        	new_img[i, j] = cdf1[img[i, j]]
+		for j in range(N):
+			new_img[i, j] = cdf1[img[i, j]]
 
-    equalized_hist=[0 for i in range(256)]
+	equalized_hist=[0 for i in range(256)]
 	for i in range(M):
-    	for j in range(N):
-        	equalized_hist[new_img[i,j]]=equalized_hist[new_img[i,j]]+1
+		for j in range(N):
+			equalized_hist[new_img[i,j]]=equalized_hist[new_img[i,j]]+1
 
 
 	return Arraytob64(new_img)
