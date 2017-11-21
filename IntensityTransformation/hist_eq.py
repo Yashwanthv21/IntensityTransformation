@@ -6,26 +6,11 @@ import base64
 
 def histogram_equalization(im):
 	im= b64toArray(im)
-	img = im
+	img = cv2.imread(im,0)
 
 	M,N=img.shape
 	hist=[0 for i in range(256)]
 	for i in range(M):
-<<<<<<< HEAD
-        for j in range(N):
-            hist[img[i,j]]=hist[img[i,j]]+1
-    cdf = [sum(hist[:i+1]) for i in range(len(hist))]
-    cdf1=[0 for i in range(256)]
-    m1 = min(i for i in cdf if i > 0)
-    m2=np.max(cdf)
-    c=m2-m1
-    for i in range(256):
-    	if(cdf[i]>0):
-        	cdf1[i]=(cdf[i]-m1)*255/(c)
-    	else:
-        	cdf1[i]=cdf[i]
-    new_img=np.zeros((int(M),int(N)),np.uint8)
-=======
 		for j in range(N):
 			hist[img[i,j]]=hist[img[i,j]]+1
 	cdf = [sum(hist[:i+1]) for i in range(len(hist))]
@@ -39,7 +24,6 @@ def histogram_equalization(im):
 	else:
 		cdf1[i]=cdf[i]
 	new_img=np.zeros((int(M),int(N)),np.uint8)
->>>>>>> cea0563c81aba7f303fdb7af1be68d6dee70af8f
 	for i in range(M):
 		for j in range(N):
 			new_img[i, j] = cdf1[img[i, j]]
@@ -56,7 +40,7 @@ def histogram_equalization(im):
 def b64toArray(b64str):
 	img = base64.b64decode(b64str)
 	img = Image.open(io.BytesIO(img))
-	return cv2.cvtColor(np.array(img), cv2.COLOR_BGR2GRAY)
+	return cv2.cvtColor(np.array(img), cv2.COLOR_BGR2RGB)
 
 def Arraytob64(array):
 	im = Image.fromarray(array.astype("uint8"))
