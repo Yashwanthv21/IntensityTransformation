@@ -24,5 +24,6 @@ class UploadImageForm(forms.Form):
 #                 self.fields[k] = TestCharField(initial=v, required=True)
 
 class OperationsForm(forms.Form):
-    CHOICES=((1,'Image Negative'),(2,'Histogram Shaping'))
-    operation = forms.ChoiceField(choices=CHOICES)
+        CHOICES=((1,'Image Negative'),(2, 'Power Log Gamma Transformation' ),(3,'Histogram'),(4,'Histogram Equalisation'))
+#CHOICES=((1,'Image Negative'),(2,'Histogram Shaping'))
+    	operation = forms.ChoiceField(choices=CHOICES)
