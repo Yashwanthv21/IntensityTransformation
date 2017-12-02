@@ -3,6 +3,10 @@ from django import forms
 class UploadImageForm(forms.Form):
     image = forms.ImageField()
 
+class UploadTwoImageForm(forms.Form):
+    image = forms.ImageField()
+    image2 = forms.ImageField()
+
 # TODO dynamically generate form fields based on selection or you can write in JavaScript
 # class TestCharField(forms.CharField):
 #     def __init__(self, *args, **kwargs):
@@ -24,6 +28,6 @@ class UploadImageForm(forms.Form):
 #                 self.fields[k] = TestCharField(initial=v, required=True)
 
 class OperationsForm(forms.Form):
-        CHOICES=((1,'Image Negative'),(2, 'Power Log Gamma Transformation' ),(3,'Histogram'),(4,'Histogram Equalisation'))
+        CHOICES=((1,'Image Negative'),(2, 'Power Log Gamma Transformation' ),(3,'Histogram Matching'),(4,'Histogram Equalisation'))
 #CHOICES=((1,'Image Negative'),(2,'Histogram Shaping'))
     	operation = forms.ChoiceField(choices=CHOICES)

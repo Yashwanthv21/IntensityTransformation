@@ -6,9 +6,11 @@ import base64
 
 def histogram_equalization(im):
 	im= b64toArray(im)
-	img = cv2.imread(im,0)
+	img = im
 
-	M,N=img.shape
+	# M,N=img.shape
+	M=len(im)
+	N = len(im[0])
 	hist=[0 for i in range(256)]
 	for i in range(M):
 		for j in range(N):
@@ -40,7 +42,7 @@ def histogram_equalization(im):
 def b64toArray(b64str):
 	img = base64.b64decode(b64str)
 	img = Image.open(io.BytesIO(img))
-	return cv2.cvtColor(np.array(img), cv2.COLOR_BGR2RGB)
+	return cv2.cvtColor(np.array(img), cv2.COLOR_BGR2GRAY)
 
 def Arraytob64(array):
 	im = Image.fromarray(array.astype("uint8"))

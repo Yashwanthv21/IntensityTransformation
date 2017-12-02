@@ -21,7 +21,7 @@ from . import views
 urlpatterns = [
     # url(r'^admin/', admin.site.urls),
     url(r'^$', views.home),
-    url(r'^app/$',views.app),
+    url(r'^app/$',views.app, name="startapp"),
     url(r'^uploadImage/$',views.upload_file,name="uploadImage"),
     url(r'^uploadImage1/$',views.upload_file1,name="uploadImage1"),
     url(r'^operation/$',views.operations, name="operations"),

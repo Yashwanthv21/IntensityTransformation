@@ -50,11 +50,8 @@
 <div class="container-fluid">
 
     <!-- Portfolio Item Heading -->
-    <h1 class="my-4">Intensity Transformation</h1>
+    <h1 class="my-4">Histogram Equalization</h1>
 
-    <!-- Portfolio Item Row -->
-
-    {#        src="http://placehold.it/750x500"#}
     <div class="row">
         <div class="col-md-6 col-xs-6 col-sm-6">
             {% if image is not none %}
@@ -62,23 +59,10 @@
                 {% else %}
                 <img class="img-fluid col-md-12" src="http://placehold.it/750x500" alt="">
             {% endif %}
-{#            <div class="form-group">#}
-{#                <div class="input-group input-file" name="Fichier1">#}
-{#			<span class="input-group-btn">#}
-{#        		<button class="btn btn-primary btn-choose" type="button">Choose</button>#}
-{#            </span>#}
-{#                    <input type="text" class="form-control" placeholder='Choose a file...'/>#}
-{#                    <span class="input-group-btn">#}
-{#       			 <button class="btn btn-warning btn-reset" type="button">Reset</button>#}
-{#    		</span>#}
-{#                </div>#}
-{#            </div>#}
-
-              <!-- FORM TO UPLOAD THE IMAGES -->
-    <form method="post"  action="{% url 'uploadImage' %}" enctype="multipart/form-data" id="imageUpload">
+    <form method="post"  action="{% url 'hist-equalisation' %}" enctype="multipart/form-data" id="imageUpload">
         {% csrf_token %}
         {{ form }}
-        <input type="submit" value="Upload">
+        <input type="submit" value="Convert">
     </form>
         </div>
         <div class="col-md-6 col-xs-6 col-sm-6">
@@ -90,48 +74,31 @@
         </div>
     </div>
     <!-- Related Projects Row -->
-    <h3 class="my-4">Operations </h3>
-
-    <div class="row">
-    <form method="post"  action="{% url 'operations' %}" id="operations">
-        {% csrf_token %}
-        {{ ops }}
-        <input type="hidden" name="imageData" value="{{ imageData }}">
-        <label>Gamma Value</label>
-        <input type="range" name="gamma" min="0" max="1.0" step="0.1" onchange="updateTextInput(this.value);">
-        <input type="text" id="textInput" value="">
-        <input type="submit" value="Run">
-    </form>
-    </div>
+{#    <h3 class="my-4">Operations </h3>#}
+{##}
+{#    <div class="row">#}
+{#    <form method="post"  action="{% url 'operations' %}" id="operations">#}
+{#        {% csrf_token %}#}
+{#        <input type="hidden" name="imageData" value="{{ imageData }}">#}
+{#        <input type="submit" value="Run">#}
+{#    </form>#}
+{#    </div>#}
     <!-- /.row -->
 
 </div>
 <!-- /.container -->
 
 <!-- Footer -->
-<footer class="py-5 bg-dark">
-    <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Starks 2017</p>
-    </div>
-    <!-- /.container -->
-</footer>
+{#<footer class="py-5 bg-dark">#}
+{#    <div class="container">#}
+{#        <p class="m-0 text-center text-white">Copyright &copy; Starks 2017</p>#}
+{#    </div>#}
+{#    <!-- /.container -->#}
+{#</footer>#}
 
 <!-- Bootstrap core JavaScript -->
 <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
 <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-<script>
-    var dropdown = document.getElementById("id_operation");
-    dropdown.onchange = function(event){
-       if(dropdown.value==="2"){
-
-         alert("You must upload another Image")
-       }
-    }
-
-    function updateTextInput(val) {
-          document.getElementById('textInput').value=val;
-        }
-</script>
 
 </body>
 

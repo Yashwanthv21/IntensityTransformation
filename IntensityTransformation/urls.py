@@ -23,4 +23,8 @@ urlpatterns = [
     url(r'^app/$',views.app),
     url(r'^uploadImage/$',views.upload_file,name="uploadImage"),
     url(r'^operation/$',views.operations, name="operations"),
+    url(r'^negative/$',views.negative, name="negative"),
+    url(r'^power-gamma/$', views.power, name="power-gamma"),
+    url(r'^hist-matching/$', views.matching, name="hist-matching"),
+    url(r'^hist-equalisation/$', views.equilisation, name="hist-equalisation"),
 ]

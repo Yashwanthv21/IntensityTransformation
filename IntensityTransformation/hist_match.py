@@ -33,13 +33,13 @@ def histmatch(imsrc, imtint):
 
 
 def b64toArray(b64str):
-	img = base64.b64decode(b64str)
-	img = Image.open(io.BytesIO(img))
-	return cv2.cvtColor(np.array(img), cv2.COLOR_BGR2RGB)
+    img = base64.b64decode(b64str)
+    img = Image.open(io.BytesIO(img))
+    return cv2.cvtColor(np.array(img), cv2.COLOR_BGR2RGB)
 
 def Arraytob64(array):
-	im = Image.fromarray(array.astype("uint8"))
-	rawBytes = io.BytesIO()
-	im.save(rawBytes, "JPEG")
-	rawBytes.seek(0)  # return to the start of the file
-	return base64.b64encode(rawBytes.read())
+    im = Image.fromarray(array.astype("uint8"))
+    rawBytes = io.BytesIO()
+    im.save(rawBytes, "JPEG")
+    rawBytes.seek(0)  # return to the start of the file
+    return base64.b64encode(rawBytes.read())
