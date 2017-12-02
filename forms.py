@@ -3,7 +3,7 @@ from django import forms
 class UploadImageForm(forms.Form):
     image = forms.ImageField()
 
-# TODO dynamically generate form fields based on selection or you can write in JavaScript
+# TODO dynamically  generate form fields based on selection or you can write in JavaScript
 # class TestCharField(forms.CharField):
 #     def __init__(self, *args, **kwargs):
 #         super(TestCharField, self).__init__(*args, **kwargs) # Needs * and **
