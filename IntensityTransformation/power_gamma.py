@@ -15,7 +15,7 @@ def adjust_gamma(image, gamma=1.0):
     ImgRow = len(image)
     ImgColumn = len(image[0])
     r1 = np.zeros((ImgRow, ImgColumn), np.uint8)
-    print (r1)
+    # print (r1)
     for i in range(ImgRow):
         for j in range(ImgColumn):
             print(((image[i,j]/ 255.0) ** invGamma) * 255)
