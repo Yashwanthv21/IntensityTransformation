@@ -18,7 +18,7 @@ def adjust_gamma(image, gamma=1.0):
     # print (r1)
     for i in range(ImgRow):
         for j in range(ImgColumn):
-            print(((image[i,j]/ 255.0) ** invGamma) * 255)
+            # print(((image[i,j]/ 255.0) ** invGamma) * 255)
             r1[i,j]=((image[i,j]/ 255.0) ** invGamma) * 255
 
 
