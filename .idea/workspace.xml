@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="889e3e9c-cc1b-4492-9ab6-3a1565ef250e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/INTENSITY TRANSFORMATION_final.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/IntensityTransformation/hist_eq1.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/INTENSITY TRANSFORMATION_final.docx" afterPath="$PROJECT_DIR$/INTENSITY TRANSFORMATION_final.docx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IntensityTransformation/views.py" afterPath="$PROJECT_DIR$/IntensityTransformation/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/hist_equilisation.html" afterPath="$PROJECT_DIR$/templates/hist_equilisation.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,7 +43,7 @@
       <file leaf-file-name="power_gamma.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/IntensityTransformation/power_gamma.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
+            <state relative-caret-position="306">
               <caret line="21" column="12" lean-forward="false" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
               <folding />
             </state>
@@ -48,8 +53,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/IntensityTransformation/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="114" column="135" lean-forward="false" selection-start-line="114" selection-start-column="135" selection-end-line="114" selection-end-column="135" />
+            <state relative-caret-position="299">
+              <caret line="114" column="150" lean-forward="false" selection-start-line="114" selection-start-column="150" selection-end-line="114" selection-end-column="150" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -57,11 +62,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hist_equilisation.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="hist_equilisation.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/hist_equilisation.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="794">
-              <caret line="116" column="29" lean-forward="false" selection-start-line="116" selection-start-column="29" selection-end-line="116" selection-end-column="29" />
+            <state relative-caret-position="7">
+              <caret line="145" column="7" lean-forward="true" selection-start-line="144" selection-start-column="9" selection-end-line="145" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hist_eq1.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/IntensityTransformation/hist_eq1.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="486">
+              <caret line="58" column="75" lean-forward="true" selection-start-line="58" selection-start-column="75" selection-end-line="58" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -131,6 +146,7 @@
         <option value="$PROJECT_DIR$/IntensityTransformation/histogram.py" />
         <option value="$PROJECT_DIR$/IntensityTransformation/power_gamma.py" />
         <option value="$PROJECT_DIR$/IntensityTransformation/hist_eq.py" />
+        <option value="$PROJECT_DIR$/IntensityTransformation/hist_eq1.py" />
         <option value="$PROJECT_DIR$/IntensityTransformation/views.py" />
         <option value="$PROJECT_DIR$/templates/hist_equilisation.html" />
       </list>
@@ -178,11 +194,6 @@
               <item name="IntensityTransformation" type="462c0819:PsiDirectoryNode" />
               <item name="IntensityTransformation" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="IntensityTransformation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IntensityTransformation" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -195,18 +206,19 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/IntensityTransformation" />
+      <recent name="$PROJECT_DIR$/IntensityTransformation/static/css" />
+      <recent name="$PROJECT_DIR$/templates" />
+      <recent name="$PROJECT_DIR$/templates/img" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/IntensityTransformation" />
       <recent name="$PROJECT_DIR$/IntensityTransformation/static" />
       <recent name="$PROJECT_DIR$/static/IntensityTransformation" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/static" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/IntensityTransformation" />
-      <recent name="$PROJECT_DIR$/IntensityTransformation/static/css" />
-      <recent name="$PROJECT_DIR$/templates" />
-      <recent name="$PROJECT_DIR$/templates/img" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -355,19 +367,27 @@
       <option name="project" value="LOCAL" />
       <updated>1512795425836</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="hist equilization graphs added">
+      <created>1512795466313</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1512795466313</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1840796" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14450262" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14450262" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3937173" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2565445" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -407,14 +427,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="26" column="5" lean-forward="false" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/IntensityTransformation/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
@@ -722,14 +734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/IntensityTransformation/power_gamma.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="21" column="12" lean-forward="false" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/histogram.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="452">
@@ -748,10 +752,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/IntensityTransformation/power_gamma.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="21" column="12" lean-forward="false" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/IntensityTransformation/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="114" column="135" lean-forward="false" selection-start-line="114" selection-start-column="135" selection-end-line="114" selection-end-column="135" />
+        <state relative-caret-position="299">
+          <caret line="114" column="150" lean-forward="false" selection-start-line="114" selection-start-column="150" selection-end-line="114" selection-end-column="150" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
@@ -760,8 +772,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/hist_equilisation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="794">
-          <caret line="116" column="29" lean-forward="false" selection-start-line="116" selection-start-column="29" selection-end-line="116" selection-end-column="29" />
+        <state relative-caret-position="7">
+          <caret line="145" column="7" lean-forward="true" selection-start-line="144" selection-start-column="9" selection-end-line="145" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IntensityTransformation/hist_eq1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="58" column="75" lean-forward="true" selection-start-line="58" selection-start-column="75" selection-end-line="58" selection-end-column="75" />
           <folding />
         </state>
       </provider>

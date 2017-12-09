@@ -133,9 +133,16 @@
             }
         },
         series: [{
-            name: 'Intensities',
-            data: {{ eq }}
-        }]
+            name: 'B',
+            data: {{ x1 }}
+        }, {
+            name: 'G',
+            data: {{ y1 }}
+        }, {
+            name: 'R',
+            data: {{ z1 }}
+        }
+        ]
     });
         arr = Array.from(new Array(255).keys());
     $('#container1').highcharts({
@@ -165,9 +172,16 @@
             }
         },
         series: [{
-            name: 'Intensities',
-            data: {{ hist }}
-        }]
+            name: 'B',
+            data: {{ x }}
+        }, {
+            name: 'G',
+            data: {{ y }}
+        }, {
+            name: 'R',
+            data: {{ z }}
+        }
+        ]
     });
 </script>
 
