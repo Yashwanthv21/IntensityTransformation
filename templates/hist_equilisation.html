@@ -64,6 +64,7 @@
         {{ form }}
         <input type="submit" value="Convert">
     </form>
+                        <div id="container1" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
         </div>
         <div class="col-md-6 col-xs-6 col-sm-6">
                       {% if result is not none %}
@@ -71,6 +72,7 @@
                 {% else %}
                 <img class="img-fluid col-md-12" src="http://placehold.it/750x500" alt="">
             {% endif %}
+                <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
         </div>
     </div>
     <!-- Related Projects Row -->
@@ -99,6 +101,75 @@
 <!-- Bootstrap core JavaScript -->
 <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
 <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<script>
+    arr = new Array(255);
+    arr = Array.from(new Array(255).keys());
+    $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Histogram of the Image'
+        },
+        subtitle: {
+            text: 'After Equalization'
+        },
+        xAxis: {
+            categories: arr
+        },
+        yAxis: {
+            title: {
+                text: 'Frequency'
+            }
+        },
+        plotOptions: {
+            line: {
+                dataLabels: {
+                    enabled: true
+                },
+                enableMouseTracking: false
+            }
+        },
+        series: [{
+            name: 'Intensities',
+            data: {{ eq }}
+        }]
+    });
+        arr = Array.from(new Array(255).keys());
+    $('#container1').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Histogram of the Image'
+        },
+        subtitle: {
+            text: 'Before Equalization'
+        },
+        xAxis: {
+            categories: arr
+        },
+        yAxis: {
+            title: {
+                text: 'Frequency'
+            }
+        },
+        plotOptions: {
+            line: {
+                dataLabels: {
+                    enabled: true
+                },
+                enableMouseTracking: false
+            }
+        },
+        series: [{
+            name: 'Intensities',
+            data: {{ hist }}
+        }]
+    });
+</script>
 
 </body>
 

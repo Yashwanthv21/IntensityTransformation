@@ -110,9 +110,9 @@ def equilisation(request):
         if form.is_valid():
             base64Image = base64.b64encode(form.cleaned_data['image'].read())
             from hist_eq import histogram_equalization
-            res = histogram_equalization(base64Image)
+            res,hist,eq_hist = histogram_equalization(base64Image)
             return render(request, 'hist_equilisation.html',
-                      {'form': UploadImageForm, 'image': displayImage(base64Image),'result': displayImage(res)})
+                      {'form': UploadImageForm, 'image': displayImage(base64Image),'result': displayImage(res),'hist':hist,'eq':eq_hist})
 
 def histogram(request):
     if request.method == 'GET':

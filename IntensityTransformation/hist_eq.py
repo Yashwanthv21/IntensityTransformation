@@ -36,7 +36,7 @@ def histogram_equalization(im):
 			equalized_hist[new_img[i,j]]=equalized_hist[new_img[i,j]]+1
 
 
-	return Arraytob64(new_img)
+	return Arraytob64(new_img),hist,equalized_hist
 
 
 def b64toArray(b64str):
