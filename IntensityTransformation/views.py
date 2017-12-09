@@ -113,3 +113,16 @@ def equilisation(request):
             res = histogram_equalization(base64Image)
             return render(request, 'hist_equilisation.html',
                       {'form': UploadImageForm, 'image': displayImage(base64Image),'result': displayImage(res)})
+
+def histogram(request):
+    if request.method == 'GET':
+        form = UploadImageForm
+        return render(request, 'histogram.html', {'form': form})
+    elif request.method == 'POST':
+        form = UploadImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            base64Image = base64.b64encode(form.cleaned_data['image'].read())
+            from histogram import Image2Histogram
+            res = Image2Histogram(base64Image)
+            return render(request, 'histogram.html',
+                      {'form': UploadImageForm, 'image': displayImage(base64Image),'result': res})

@@ -27,4 +27,5 @@ urlpatterns = [
     url(r'^power-gamma/$', views.power, name="power-gamma"),
     url(r'^hist-matching/$', views.matching, name="hist-matching"),
     url(r'^hist-equalisation/$', views.equilisation, name="hist-equalisation"),
+    url(r'^histogram/$', views.histogram, name="histogram"),
 ]
